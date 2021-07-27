@@ -1,18 +1,18 @@
 # Result Builder library for Koalati tools
-A library that allows tool developers to easily build and format result sets in Koalati tools, using the validation format defined in the [contributor documentation](https://docs.koalati.com/).
+A library that allows tool developers to easily build and format result sets in Koalati tools, using the validation format defined in Koalati's [contributor documentation](https://docs.koalati.com/docs/tools/formatting-results).
 
 
-# Setup / Installation 
+## Installation 
 - Make sure [NodeJs](https://nodejs.org/en/) is installed
 - Install the package using the `npm install` command
 ```
 npm i result-builder
 ```
 
-# Usage
+## Usage
 Then, you can include it in your project and use like this
 ```javascript
-const ResultBuilder = require('result-builder')
+const ResultBuilder = require('@koalati/result-builder')
 //...
 const resultsBuilder = new ResultBuilder(); 
 const test = resultsBuilder.newTest('test-unique-name');
@@ -36,8 +36,8 @@ test.setTitle("my-title")
 return resultsBuilder.getResultsTests(); 
 ```
 
-# List of methods and functions
-## `ResultBuilder` class
+## Classes and methods
+### `ResultBuilder` (main class)
 | Methods           | Descriptions                                               |
 | :---------------- | :--------------------------------------------------------- |
 | newTest(string)   | Allow to set up a new test by providing a test unique name |
@@ -45,22 +45,23 @@ return resultsBuilder.getResultsTests();
 | toJson()          | Convert the result to a JSON format                        |
 | toArray()         | Convert all the results into an array                      |
 
-## `Test` class
+### `Test` (utility class)
 | Methods                             | Descriptions |
 | :---------------------------------  | :------------------------------- |
-| addRecommandation(string) | Allows you to add recommendations indicating to the user improvements to be made. Only strings are accepted. |
-| addSnippet(string|[ElementHandle](https://pptr.dev/#?product=Puppeteer&version=main&show=api-class-elementhandle) | Allows you to add code snippets from the results obtained.|
-| addTableRow(array)                  | Allows you to add a row to a data table. The first row will act as the table's header. Every row must have the same number of columns. |
-| setTitle(string)                    | Allow tou to add a user-friendly title. Only strings are accepted. |
-| setDescription(string)              | Allow you to add a user-friendly description of the test. Only strings are accepted. |
-| setWeight(number)                   | allows you to add the value of the test weight. Only numbers between 0.0 and 1.0. |
-| setScore(float)                     | allows you to add the value of the test score. Only numbers between 0.0 and 1.0. |
-| getTitle()                          | Allow you to get the title of the test. |
-| getDescription()                    | Allow you to get the description of the test. |
-| getWeight()                         | Allows you to get the weight of the test. |
-| getScore()                          | Allows you to get the score of the test. |
-| getSnippets()                       | Allows you to get the list of snippets. |
+| addRecommandation(string) | Adds a recommendation indicating to the user improvements to be made. |
+| addSnippet(string\|[ElementHandle](https://pptr.dev/#?product=Puppeteer&version=main&show=api-class-elementhandle)) | Allows you to add code snippets from the results obtained.|
+| addTableRow(array)                  | Adds a row to a data table. The first row will act as the table's header. Every row must have the same number of columns. |
+| setTitle(string)                    | Defines a user-friendly title for the test. |
+| setDescription(string)              | Defines a user-friendly description for the test. |
+| setWeight(number)                   | Defines the weight of this test relative to others in the same tool. Only numbers between 0.0 and 1.0. |
+| setScore(float)                     | Defines the score of this test. Only numbers between 0.0 and 1.0. |
+| getTitle()                          | Returns the title of the test. |
+| getDescription()                    | Returns the description of the test. |
+| getWeight()                         | Returns the weight of the test. |
+| getScore()                          | Returns the score of the test. |
+| getSnippets()                       | Returns the list of snippets. |
 
 
-# License
-MIT-licensed
+## Authors
+This was originally developed by [Papa Alioune FALL](https://github.com/ppalioune) in the Spring of 2021. 
+This fork has been made to keep the library up-to-date, as Papa's has since completed his internship.

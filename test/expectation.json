@@ -1,0 +1,15 @@
+[
+	{
+		"uniqueName": "Test name",
+		"title": "User-friendly title",
+		"description": "My test's sample description",
+		"weight": 1,
+		"score": 1,
+		"recommandations": ["Sample recommandation #1", "Sample recommandation #2"],
+		"snippets": ["<h1>Lorem Ipsum</h1>"],
+		"table": [
+			["Heading 1", "Heading 2", "Heading 3", ""],
+			["Value 1", "Value 2", "Value 3", "Value 4" ]
+		]
+	}
+]

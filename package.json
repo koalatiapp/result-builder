@@ -1,25 +1,28 @@
 {
-  "name": "result-builder",
-  "version": "1.0.5",
-  "description": "",
-  "main": "resultBuilder.js",
+  "name": "@koalati/result-builder",
+  "version": "1.1.0",
+  "description": "A helper library for Koalati tool developers that helps generate and format results.",
+  "main": "index.js",
   "scripts": {
-    "test": "mocha testUnit.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ppalioune/resultsBuilder.git"
+    "url": "git+https://github.com/koalatiapp/result-builder.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["koalati"],
+  "author": {
+    "name": "Koalati",
+    "email": "info@koalati.com",
+    "url": "https://koalati.com"
+  },
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ppalioune/resultsBuilder/issues"
+    "url": "https://github.com/koalatiapp/result-builder/issues"
   },
-  "homepage": "https://github.com/ppalioune/resultsBuilder#readme",
+  "homepage": "https://github.com/koalatiapp/result-builder#readme",
   "devDependencies": {
-    "mocha": "^8.2.1",
-    "request": "^2.88.2"
-  },
-  "dependencies": {}
+    "eslint": "^7.31.0",
+    "mocha": "^8.2.1"
+  }
 }
