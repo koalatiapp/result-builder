@@ -1,4 +1,9 @@
 # Result Builder library for Koalati tools
+[![npm (scoped)](https://img.shields.io/npm/v/@koalati/result-builder)](https://www.npmjs.com/package/@koalati/result-builder)
+[![GitHub CI Workflow status](https://github.com/koalatiapp/result-builder/workflows/CI/badge.svg)](https://github.com/koalatiapp/result-builder/actions)
+[![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@koalati/result-builder)](https://www.npmjs.com/package/@koalati/result-builder)
+
+
 A library that allows tool developers to easily build and format result sets in Koalati tools, using the validation format defined in Koalati's [contributor documentation](https://docs.koalati.com/docs/tools/formatting-results).
 
 
