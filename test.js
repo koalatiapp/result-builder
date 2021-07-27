@@ -105,6 +105,14 @@ class Test {
 		return this;
 	}
 
+	addSnippets(snippets) {
+		for (const snippet of snippets) {
+			this.addSnippet(snippet);
+		}
+
+		return this;
+	}
+
 	addTableRow(table) {
 		if (!Array.isArray(table)) {
 			throw new Error ("The provided 'table' parameter must be an array.");
