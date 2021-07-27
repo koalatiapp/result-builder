@@ -25,7 +25,7 @@ test.setTitle("my-title")
     .setDescription("my-description")
     .setWeight(0.5)
     .setScore(0.5)
-    .addRecommandation("Optimize your images to reduce your page's weight by %savings%.", { "%savings%": "6%" })
+    .addRecommendation("Optimize your images to reduce your page's weight by %savings%.", { "%savings%": "6%" })
     .addSnippet(["my-snippet"])
     .addTableRow([
         [
@@ -53,7 +53,7 @@ return resultsBuilder.getResultsTests();
 ### `Test` (utility class)
 | Methods                             | Descriptions |
 | :---------------------------------  | :------------------------------- |
-| addRecommandation(`string`, `object = {}`) | Adds a recommendation indicating to the user improvements to be made. The first parameter is the recommendation's template message. The second argument is an object literal containing any dynamic values that should be substituted in the template (where the object's keys correspond to the placeholder it will replace).  |
+| addRecommendation(`string`, `object = {}`) | Adds a recommendation indicating to the user improvements to be made. The first parameter is the recommendation's template message. The second argument is an object literal containing any dynamic values that should be substituted in the template (where the object's keys correspond to the placeholder it will replace).  |
 | addSnippet(`string`\|[`ElementHandle`](https://pptr.dev/#?product=Puppeteer&version=main&show=api-class-elementhandle)) | Allows you to add code snippets from the results obtained.|
 | addTableRow(`array`)                  | Adds a row to a data table. The first row will act as the table's header. Every row must have the same number of columns. |
 | setTitle(`string`)                    | Defines a user-friendly title for the test. |

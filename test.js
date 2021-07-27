@@ -5,7 +5,7 @@ class Test {
 		this.description = description;
 		this.weight = weight;
 		this.score = score;
-		this.recommandations = [];
+		this.recommendations = [];
 		this.snippets = [];
 		this.table = [];
 	}
@@ -68,8 +68,8 @@ class Test {
 		return this.score;
 	}
 
-	getRecommandations() {
-		return this.recommandations;
+	getRecommendations() {
+		return this.recommendations;
 	}
 
 	getSnippets() {
@@ -77,7 +77,7 @@ class Test {
 	}
 
 	// Methods
-	addRecommandation(template, parameters = {}) {
+	addRecommendation(template, parameters = {}) {
 		if (typeof template != "string") {
 			throw new Error ("The recommendation template must be a string.");
 		}
@@ -90,7 +90,7 @@ class Test {
 			throw new Error ("The recommendation parameters must be an object literal.");
 		}
 
-		this.recommandations.push([template, parameters]);
+		this.recommendations.push([template, parameters]);
 
 		return this;
 	}

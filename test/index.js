@@ -10,8 +10,8 @@ describe("Building result", function () {
 		.setTitle("User-friendly title")
 		.setWeight(1)
 		.setScore(1)
-		.addRecommandation("Sample recommandation #1")
-		.addRecommandation("Sample recommandation #2")
+		.addRecommendation("Sample recommendation #1")
+		.addRecommendation("Sample recommendation #2")
 		.addSnippet("<h1>Lorem Ipsum</h1>")
 		.addTableRow(["Heading 1", "Heading 2", "Heading 3", ""])
 		.addTableRow(["Value 1", "Value 2", "Value 3", "Value 4"]);
@@ -30,7 +30,7 @@ describe("Building result", function () {
 			.setTitle("H1 headings")
 			.setWeight(1)
 			.setScore(1)
-			.addRecommandation("zzzz")
+			.addRecommendation("zzzz")
 			.addSnippet(" snippets 1")
 			.addTableRow([
 				"",
@@ -67,8 +67,8 @@ describe("Building result", function () {
 		assert.throws(() => { workingTest.setScore("a string"); }, Error);
 	});
 
-	it("Should throw an error when Test.addRecommandation have invalid value", function () {
-		assert.throws(() => { workingTest.addRecommandation(1); }, Error);
+	it("Should throw an error when Test.addRecommendation have invalid value", function () {
+		assert.throws(() => { workingTest.addRecommendation(1); }, Error);
 	});
 
 	it("Should throw an error when Test.addSnippet have invalid value", function () {
