@@ -77,12 +77,20 @@ class Test {
 	}
 
 	// Methods
-	addRecommandation(recommandation) {
-		if (typeof recommandation != "string") {
-			throw new Error ("Invalid value for recommandation: must be a string.");
+	addRecommandation(template, parameters = {}) {
+		if (typeof template != "string") {
+			throw new Error ("The recommendation template must be a string.");
 		}
 
-		this.recommandations.push(recommandation);
+		if (!parameters) {
+			parameters = [];
+		}
+
+		if (typeof parameters != "object" || parameters.constructor != Object) {
+			throw new Error ("The recommendation parameters must be an object literal.");
+		}
+
+		this.recommandations.push([template, parameters]);
 
 		return this;
 	}
