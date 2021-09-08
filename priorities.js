@@ -1,0 +1,5 @@
+module.exports = {
+	ISSUE: "ISSUE",
+	ESSENTIAL: "ESSENTIAL",
+	OPTIMIZATION: "OPTIMIZATION",
+};

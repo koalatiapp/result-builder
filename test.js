@@ -1,3 +1,5 @@
+const priorities = require("./priorities");
+
 class Test {
 	constructor(uniqueName, title = "", description = "", weight = null, score = null) {
 		this.uniqueName = uniqueName;
@@ -10,7 +12,6 @@ class Test {
 		this.table = [];
 	}
 
-	// Setters
 	setTitle(title) {
 		if (typeof title !== "string") {
 			throw new Error("Invalid value for title: must be a string.");
@@ -51,7 +52,6 @@ class Test {
 		return this;
 	}
 
-	// Getters
 	getTitle() {
 		return this.title;
 	}
@@ -76,10 +76,19 @@ class Test {
 		return this.snippets;
 	}
 
-	// Methods
-	addRecommendation(template, parameters = {}) {
+	/**
+	 * @param {string} template
+	 * @param {object} parameters
+	 * @param {string|null} priority
+	 */
+	addRecommendation(template, parameters = {}, priority = null) {
 		if (typeof template != "string") {
 			throw new Error ("The recommendation template must be a string.");
+		}
+
+		const availablePriorities = Object.values(priorities);
+		if (priority !== null && availablePriorities.indexOf(priority) == -1) {
+			throw new Error (`The recommendation priority must be null, or one of the following values: ${availablePriorities.map(str => `"${str}"`).join(", ")}. Found "${priority}".`);
 		}
 
 		if (!parameters) {
@@ -90,7 +99,7 @@ class Test {
 			throw new Error ("The recommendation parameters must be an object literal.");
 		}
 
-		this.recommendations.push([template, parameters]);
+		this.recommendations.push([template, parameters, priority]);
 
 		return this;
 	}

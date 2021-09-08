@@ -1,4 +1,5 @@
 const Test = require("./test");
+const priorities = require("./priorities");
 
 class ResultBuilder {
 	constructor() {
@@ -37,4 +38,7 @@ class ResultBuilder {
 	}
 }
 
-module.exports = ResultBuilder;
+module.exports =  {
+	ResultBuilder,
+	priorities,
+};

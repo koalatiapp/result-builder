@@ -17,7 +17,7 @@ npm i result-builder
 ## Usage
 Then, you can include it in your project and use like this
 ```javascript
-const ResultBuilder = require('@koalati/result-builder')
+const { ResultBuilder, priorities } = require('@koalati/result-builder')
 //...
 const resultsBuilder = new ResultBuilder(); 
 const test = resultsBuilder.newTest('test-unique-name');
@@ -25,7 +25,7 @@ test.setTitle("my-title")
     .setDescription("my-description")
     .setWeight(0.5)
     .setScore(0.5)
-    .addRecommendation("Optimize your images to reduce your page's weight by %savings%.", { "%savings%": "6%" })
+    .addRecommendation("Optimize your images to reduce your page's weight by %savings%.", { "%savings%": "6%" }, priorities.OPTIMIZATION)
     .addSnippet(["my-snippet"])
     .addTableRow([
         [
@@ -53,7 +53,7 @@ return resultsBuilder.getResultsTests();
 ### `Test` (utility class)
 | Methods                             | Descriptions |
 | :---------------------------------  | :------------------------------- |
-| addRecommendation(`string`, `object = {}`) | Adds a recommendation indicating to the user improvements to be made. The first parameter is the recommendation's template message. The second argument is an object literal containing any dynamic values that should be substituted in the template (where the object's keys correspond to the placeholder it will replace).  |
+| addRecommendation(`string`, `object = {}`, `priority = null`) | Adds a recommendation indicating to the user improvements to be made. The first parameter is the recommendation's template message. The second argument is an object literal containing any dynamic values that should be substituted in the template (where the object's keys correspond to the placeholder it will replace). The third argument indicates the level of priority of the recommendation, which should be either `null` or one of the priority constants exported by the package.  |
 | addSnippet(`string`\|[`ElementHandle`](https://pptr.dev/#?product=Puppeteer&version=main&show=api-class-elementhandle)) | Allows you to add code snippets from the results obtained.|
 | addSnippets(`string[]`\|[`ElementHandle[]`](https://pptr.dev/#?product=Puppeteer&version=main&show=api-class-elementhandle)) | Allows you to add multiple code snippets from the results obtained.|
 | addTableRow(`array`)                  | Adds a row to a data table. The first row will act as the table's header. Every row must have the same number of columns. |
@@ -71,3 +71,5 @@ return resultsBuilder.getResultsTests();
 ## Authors
 This was originally developed by [Papa Alioune FALL](https://github.com/ppalioune) in the Spring of 2021. 
 This fork has been made to keep the library up-to-date, as Papa's has since completed his internship.
+
+Maintained by Émile Perron and Koalati.

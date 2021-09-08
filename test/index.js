@@ -1,4 +1,4 @@
-const ResultBuilder = require("../");
+const { ResultBuilder, priorities } = require("../");
 const assert = require("assert").strict;
 const expectedResults = require("./expectation.json");
 
@@ -11,7 +11,7 @@ describe("Building result", function () {
 		.setWeight(1)
 		.setScore(1)
 		.addRecommendation("Sample recommendation #1")
-		.addRecommendation("Sample recommendation #2")
+		.addRecommendation("Sample recommendation #2", {}, priorities.ISSUE)
 		.addSnippet("<h1>Lorem Ipsum</h1>")
 		.addTableRow(["Heading 1", "Heading 2", "Heading 3", ""])
 		.addTableRow(["Value 1", "Value 2", "Value 3", "Value 4"]);
