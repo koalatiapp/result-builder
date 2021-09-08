@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/koalatiapp/result-builder.git"
   },
-  "keywords": ["koalati"],
+  "keywords": [
+    "koalati"
+  ],
   "author": {
     "name": "Koalati",
     "email": "info@koalati.com",
